@@ -2,23 +2,28 @@
 #include <stdbool.h>
 
 int antalmotor;
-int vaegtpakke;
+float vaegtpakke;
 bool beltekorer;
 float kgmotor = 5.6;
 
-void submitinfo(int m, int p){
-    antalmotor = m;
-    vaegtpakke = p;
+void submitinfo(int m, float p){
     float kapasitet = kgmotor * antalmotor;
 
     if(p<=kapasitet) {
-        printf("beltet kan håndtere vægten");
+        printf("beltet kan haandtere vaegten");
     } else {
-        printf("beltet kan ikke håndtere vægten");
+        printf("beltet kan ikke haandtere vaegten");
     }
     return;
 }
 int main(void){
-    submitinfo(5,100);
+
+printf("Hvor mange motorer koerer i dag: ");
+scanf("%d", &antalmotor);
+
+printf("Hvad vejer pakkerne: ");
+scanf("%f" , &vaegtpakke);
+
+submitinfo(antalmotor, vaegtpakke);
     return 0;
 }
